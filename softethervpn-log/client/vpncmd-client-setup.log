@@ -1,0 +1,29 @@
+#1. Set Client access password <password>
+vpncmd /client localhost:<port> /cmd passwordset <password>
+
+#2. Create virtual nic <nic name>
+vpncmd /client localhost:<port> /password:<password> /cmd niccreate <nic name>
+
+#3. Create account <account name> to make Connection to <server>:<port> on hub <hub name>
+vpncmd /client <host>:<port> /password:<password> /cmd accountcreate <account name> /SERVER:<server>:<port> /HUB:<hub name>
+
+#4. Set password <password> for account <account name>  with standard authentication method
+vpncmd /client <host>:<port> /password:<password> /cmd accountpasswordset <account name> /PASSWORD:<password> /TYPE:standard
+
+#5. Start Connection on account <account name>
+vpncmd /client <host>:<port> /password:<password> /cmd accountconnect <account name>
+
+#6. Disconnect account <account name>
+vpncmd /client <host>:<port> /password:<password> /cmd accountdisconnect <account name>
+
+#7. Get account <account name> status
+vpncmd /client <host>:<port> /password:<password> /cmd accountstatusget <account name>
+
+
+
+===
+ip address setup
+#1. set ip addr on <nic name>
+ip a a <ip addr>/<ip mask> dev vpn_<nic name>
+
+

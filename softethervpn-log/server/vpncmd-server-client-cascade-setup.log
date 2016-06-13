@@ -1,0 +1,16 @@
+#1. create cascade <cascade name> on <hub name> to <remote hub> at <server addr>:<port> with user <username>
+vpncmd /SERVER localhost:<port> /PASSWORD:<password> /HUB:<hub name> /CMD cascadecreate <cascade name> /SERVER:<server addr>:<port> /HUB:<remote hub> /USER:<username>
+
+#2. set password <password> for cascade connection <cascade name> 
+vpncmd /SERVER localhost:<port> /PASSWORD:<password> /HUB:<hub name> /CMD cascadepasswordset <cascade name> /PASSWORD:<password>
+
+#3. set cascade connection <cascade name> online
+vpncmd /SERVER localhost:<port> /PASSWORD:<password> /HUB:<hub name> /CMD cascadeonline <cascade name>
+
+#4. set cascade connection <cascade name> offline
+vpncmd /SERVER localhost:<port> /PASSWORD:<password> /HUB:<hub name> /CMD cascadeoffline <cascade name>
+
+#5. get Cascade connection <cascade name> status
+vpncmd /SERVER localhost:<port> /PASSWORD:<password> /HUB:<hub name> /CMD cascadeGetStatus <cascade name>
+
+

@@ -1,0 +1,37 @@
+#setting the server access password
+vpncmd /SERVER /PASSWORD:<password>
+
+#list hub on server: localhost port: <port>
+vpncmd /SERVER localhost:<port> /PASSWORD:<password> /CMD hublist
+
+#delete unused hub on server, hub name DEFAULT
+vpncmd /SERVER localhost:<port> /PASSWORD:<password> /CMD hubdelete DEFAULT
+
+#create new hub 
+vpncmd /SERVER localhost:<port> /PASSWORD:<password> /CMD hubcreate <new hub name>
+
+#create bridge ethernet
+
+#1. list any bridge device than can be used
+vpncmd /SERVER localhost:<port> /PASSWORD:<password> /CMD bridgedevice
+
+#2. Create bridge ethernet or TAP device on <hub name>
+#2a. bridge to physical ethernet / or existing bridge ethernet
+vpncmd /SERVER localhost:<port> /PASSWORD:<password> /CMD bridgecreate <hub name> /DEVICE:<bridge ethernet device> /TAP:no
+
+#2b. create TAP device
+vpncmd /SERVER localhost:<port> /PASSWORD:<password> /CMD bridgecreate <hub name> /DEVICE:<new TAP dev name> /TAP:yes
+
+#2b. List created bridge / TAP devices
+vpncmd /SERVER localhost:<port> /PASSWORD:<password> /CMD bridgelist
+
+#3 Create Group of user on hub <hub name>
+vpncmd /SERVER localhost:<port> /PASSWORD:<password> /HUB:<hub name> /CMD groupcreate <new group>
+
+#4 Create user <new username> member of <group name> on hub <hub name>
+vpncmd /SERVER localhost:<port> /PASSWORD:<password> /HUB:<hub name> /CMD usercreate <new username> /GROUP:<grup name> /RealName:<new Real username> /UserDescription:<new username description>
+
+#5 Set user <username> password <password>
+vpncmd /SERVER localhost:<port> /PASSWORD:<password> /HUB:<hub name> /CMD userpasswordset <username> /PASSWORD:<password>
+
+
