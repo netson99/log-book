@@ -1,0 +1,21 @@
+Purpose: 
+- using usb external disk as disk storage in virtualbox
+- to bypass restriction on some OS that can not install the OS on the external disk (ie Windows OS)
+- install linux distro on usb disk as recovery disk.
+
+
+Note:
+- I test this on my linux pc.
+- assume the external disk is /dev/sdc
+
+Preparation:
+1. Create raw disk image of the external disk.
+	- as root run command :
+	    VBoxManange internalcommands createrawvmdk -filename /VBoxImg/disk-sdc.vmdk -rawdisk /dev/sdc
+
+2. Use this /VBoxImg/disk-sdc.vmdk as storage on Virtualbox
+    - on the storage selection, choose "choose existing disk" and select the raw disk that we have prepared on step 1.
+
+3. Virtualbox have to be run as root / use root privileges
+	
+
