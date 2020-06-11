@@ -5,4 +5,5 @@ My Log Book Activities:
 3. Softether VPN Server Setup
 4. Softether VPN Server Cascade connection setup
 5. Softether VPN Client account setup
+6. Virtualbox use external disk as storage setup
 
